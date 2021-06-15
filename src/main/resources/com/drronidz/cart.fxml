@@ -2,22 +2,84 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="566.0" spacing="2.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="560.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="560.0" minWidth="560.0" prefWidth="560.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="414.399951171875" minHeight="5.5999977111816435" prefHeight="414.399951171875" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="219.2" minHeight="0.0" prefHeight="85.40004882812502" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <JFXButton prefHeight="37.0" prefWidth="566.0" styleClass="button-enterOrScan" stylesheets="@css/button.css" text="ENTER OR SCAN PRODUCT" />
-      <JFXListView />
-      <Line endX="484.807373046875" endY="-20.920602798461914" startX="-67.685546875" startY="-20.920934677124023" />
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <JFXButton contentDisplay="CENTER" graphicTextGap="5.0" lineSpacing="2.0" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" prefHeight="40.0" prefWidth="550.0" styleClass="button-enterOrScan" stylesheets="@css/button.css" text="ENTER OR SCAN PRODUCT" />
+      <JFXListView prefHeight="351.0" prefWidth="560.0" GridPane.rowIndex="1" />
+      <GridPane gridLinesVisible="true" prefWidth="554.0" GridPane.rowIndex="2">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="CENTER" vgrow="ALWAYS" />
+        </rowConstraints>
          <children>
-            <VBox prefHeight="76.0" prefWidth="166.0" />
-            <VBox prefHeight="76.0" prefWidth="166.0" />
-            <VBox prefHeight="76.0" prefWidth="231.0" />
+            <Label alignment="TOP_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="120.0" stylesheets="@css/label.css" text="Subtotal">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="subTotal" alignment="TOP_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="160.0" stylesheets="@css/label.css" text="110.52 £" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="TOP_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="120.0" stylesheets="@css/label.css" text="VAT 21%" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="tvaTaxe" alignment="TOP_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="160.0" stylesheets="@css/label.css" text="29.38 £" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="120.0" styleClass="discount-label" stylesheets="@css/label.css" text="Discount" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="discount" alignment="TOP_LEFT" contentDisplay="CENTER" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="160.0" styleClass="discount-label" stylesheets="@css/label.css" text="00.00 £" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label alignment="BOTTOM_RIGHT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="270.0" stylesheets="@css/label.css" text="TOTAL" GridPane.columnIndex="2">
+               <padding>
+                  <Insets right="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="total" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="270.0" styleClass="total-label" stylesheets="@css/label.css" text="139.90 £" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+               <padding>
+                  <Insets right="2.0" />
+               </padding>
+            </Label>
          </children>
-      </HBox>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
    </children>
-</VBox>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

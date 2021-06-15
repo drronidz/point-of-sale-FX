@@ -8,8 +8,31 @@
     src: url('font/TitilliumWeb-Regular.ttf');
     font-family:'Titillium Web Regular';
 }
+@font-face {
+    src: url('font/TitilliumWeb-SemiBold.ttf');
+    font-family:'Titillium Web SemiBold';
+}
+@font-face {
+    src: url('font/TitilliumWeb-Bold.ttf');
+    font-family: 'Titillium Web Bold'
+}
 /*tools view */
 .ticket {
     -fx-font-family: "Titillium Web Regular";
+    -fx-font-size: 20;
+}
+
+/*cart view*/
+.label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 20;
+}
+.total-label {
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 34;
+}
+.discount-label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-text-fill: -fx-discountColor;
     -fx-font-size: 20;
 }

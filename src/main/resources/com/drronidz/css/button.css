@@ -46,6 +46,7 @@
     -fx-text-transform: uppercase;
     -fx-font-family: 'Titillium Web Regular';
     -fx-font-size: 18;
+    -fx-background-color: -fx-enterOrScanHover;
     -fx-text-fill: -fx-validateColor;
 }
 
