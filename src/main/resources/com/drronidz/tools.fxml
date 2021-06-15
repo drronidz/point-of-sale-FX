@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="186.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="96.0" prefWidth="186.0" styleClass="ticket" stylesheets="@css/label.css" text="Ticket n°  15893214" />
+      <GridPane alignment="CENTER" gridLinesVisible="true" hgap="2.0" prefHeight="247.0" prefWidth="278.0" style="-fx-background-color: red;" vgap="2.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="60.0" minHeight="60.0" percentHeight="0.0" prefHeight="60.0" valignment="CENTER" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <JFXButton fx:id="calculator" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-calculator" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="calendar" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-calendar" iconSize="32" styleClass="button" tabSize="0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="folder" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.rowIndex="1">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-folder-open" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="file" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-file-alt" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="reset" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="button-reset" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-times" iconSize="32" styleClass="button-reset" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="print" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-print" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="settings" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.rowIndex="2">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-cog" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="trash" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-trash" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="search" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-search" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="discount" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.rowIndex="3">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-tag" iconSize="32" rotate="270.0" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="staff" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-calculator" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="bag" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-shopping-bag" iconSize="32" styleClass="button" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="validate" ellipsisString="" focusTraversable="false" graphicTextGap="20.0" maxHeight="50.0" maxWidth="214.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" styleClass="button-validate" text="VALIDATE" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <stylesheets>
+                  <URL value="@css/root.css" />
+                  <URL value="@css/button.css" />
+                  <URL value="@css/icon.css" />
+               </stylesheets>
+               <graphic>
+                  <FontIcon iconLiteral="las-shopping-cart" iconSize="40" styleClass="button-validate" tabSize="0" />
+               </graphic>
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </children>
+</VBox>

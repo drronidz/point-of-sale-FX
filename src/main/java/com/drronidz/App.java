@@ -15,14 +15,27 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-    private String here = "Hre";
-
+    
     @Override
     public void start(Stage stage) throws IOException {
-
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
+        stage.setFullScreen(true);
         stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -33,9 +46,4 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-
-    public static void main(String[] args) {
-        launch();
-    }
-
 }

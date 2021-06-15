@@ -1,0 +1,13 @@
+@import "root.css";
+@font-face {
+    src: url('font/LemonMilklight.otf');
+    font-family: 'Lemon/Milk light';
+}
+@font-face {
+    src: url('font/TitilliumWeb-Regular.ttf');
+    font-family:'Titillium Web Regular';
+}
+.ticket {
+    -fx-font-family: "Titillium Web Regular";
+    -fx-font-size: 20;
+}

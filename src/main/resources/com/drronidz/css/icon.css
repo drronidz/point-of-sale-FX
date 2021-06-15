@@ -1,0 +1,28 @@
+@import "root.css";
+
+.button .ikonli-font-icon {
+    -fx-icon-color:-fx-iconActiveColor !important;
+}
+
+.button:hover .ikonli-font-icon {
+    -fx-icon-color:-fx-iconHoverColor !important;
+}
+.button:disabled .ikonli-font-icon {
+    -fx-icon-color:-fx-iconDisableColor !important;
+}
+
+/* custom buttons styles */
+/*validate button */
+.button-validate .ikonli-font-icon {
+    -fx-icon-color: -fx-iconValidateColor !important;
+}
+.button-validate:hover .ikonli-font-icon {
+    -fx-icon-color:-fx-iconHoverColor;
+}
+/* reset button */
+.button-reset .ikonli-font-icon {
+    -fx-icon-color:-fx-iconResetColor !important;
+}
+.button-reset:hover .ikonli-font-icon {
+    -fx-icon-color:-fx-iconResetHoverColor !important;
+}
