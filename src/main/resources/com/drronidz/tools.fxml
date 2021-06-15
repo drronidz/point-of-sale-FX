@@ -12,7 +12,7 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="186.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="96.0" prefWidth="186.0" styleClass="ticket" stylesheets="@css/label.css" text="Ticket n°  15893214" />
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="96.0" prefWidth="186.0" styleClass="ticket" stylesheets="@css/label.css" text="Ticket n°  158932114" />
       <GridPane alignment="CENTER" gridLinesVisible="true" hgap="2.0" prefHeight="247.0" prefWidth="278.0" style="-fx-background-color: red;" vgap="2.0">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />

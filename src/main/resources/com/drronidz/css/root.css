@@ -13,6 +13,7 @@
     -fx-validateColor:#3cd52f;
     -fx-pressColorBorder:#3cd52f;
     -fx-disableColor:#1c252c;
+    -fx-enterOrScan:#b4b4b2;
 }
 @font-face {
     src: url('font/LemonMilk.otf');

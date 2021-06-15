@@ -4,7 +4,10 @@
     font-family:'Titillium Web Light';
     src: url('font/TitilliumWeb-Regular.ttf');
 }
-
+@font-face {
+    src: url('font/LemonMilk.otf');
+    font-family: 'Lemon/Milk';
+}
 
 .button{
     -fx-background-color:#1c252c;
@@ -24,7 +27,6 @@
 .button-reset {
     -fx-background-color:-fx-resetColor ;
 }
-
 .button-validate {
     -fx-background-color:-fx-validateColor ;
     -fx-font-family: 'Lemon/Milk';
@@ -35,4 +37,16 @@
     -fx-font-size: 18;
     -fx-text-fill: -fx-validateColor;
 }
+.button-enterOrScan {
+    -fx-background-color:-fx-enterOrScan;
+    -fx-font-family: 'Titillium Web Regular';
+    -fx-font-size: 18;
+}
+.button-enterOrScan:hover {
+    -fx-text-transform: uppercase;
+    -fx-font-family: 'Titillium Web Regular';
+    -fx-font-size: 18;
+    -fx-text-fill: -fx-validateColor;
+}
+
 

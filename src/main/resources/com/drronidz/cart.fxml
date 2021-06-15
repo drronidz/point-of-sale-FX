@@ -2,12 +2,22 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="566.0" spacing="2.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXButton prefHeight="37.0" prefWidth="566.0" text="enter or scan product" />
+      <JFXButton prefHeight="37.0" prefWidth="566.0" styleClass="button-enterOrScan" stylesheets="@css/button.css" text="ENTER OR SCAN PRODUCT" />
       <JFXListView />
+      <Line endX="484.807373046875" endY="-20.920602798461914" startX="-67.685546875" startY="-20.920934677124023" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox prefHeight="76.0" prefWidth="166.0" />
+            <VBox prefHeight="76.0" prefWidth="166.0" />
+            <VBox prefHeight="76.0" prefWidth="231.0" />
+         </children>
+      </HBox>
    </children>
 </VBox>
