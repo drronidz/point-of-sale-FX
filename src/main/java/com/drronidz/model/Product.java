@@ -41,4 +41,14 @@ public class Product {
     public void setSize(String size) {
         this.size = size;
     }
+
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", size='" + size + '\'' +
+                '}';
+    }
 }
