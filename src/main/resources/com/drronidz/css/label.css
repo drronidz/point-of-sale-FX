@@ -36,3 +36,8 @@
     -fx-text-fill: -fx-discountColor;
     -fx-font-size: 20;
 }
+/*cart-item*/
+.cart-item-label{
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 14;
+}

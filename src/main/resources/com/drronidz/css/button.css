@@ -50,4 +50,11 @@
     -fx-text-fill: -fx-validateColor;
 }
 
-
+.button-add-cart {
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}
+.button-remove-cart {
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}

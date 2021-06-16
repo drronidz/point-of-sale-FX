@@ -9,18 +9,18 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 
-<GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="560.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:controller="com.drronidz.controller.CartController" alignment="TOP_CENTER" gridLinesVisible="true" maxWidth="570.0" minWidth="570.0" prefHeight="570.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="560.0" minWidth="560.0" prefWidth="560.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="414.399951171875" minHeight="5.5999977111816435" prefHeight="414.399951171875" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="219.2" minHeight="0.0" prefHeight="85.40004882812502" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="435.200048828125" minHeight="5.5999977111816435" prefHeight="424.8000244140625" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="219.2" minHeight="0.0" prefHeight="85.19997558593747" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <JFXButton contentDisplay="CENTER" graphicTextGap="5.0" lineSpacing="2.0" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" prefHeight="40.0" prefWidth="550.0" styleClass="button-enterOrScan" stylesheets="@css/button.css" text="ENTER OR SCAN PRODUCT" />
-      <JFXListView prefHeight="351.0" prefWidth="560.0" GridPane.rowIndex="1" />
+      <JFXButton fx:id="enterOrScan" contentDisplay="CENTER" graphicTextGap="5.0" lineSpacing="2.0" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" prefHeight="40.0" prefWidth="550.0" styleClass="button-enterOrScan" stylesheets="@css/button.css" text="ENTER OR SCAN PRODUCT" />
+      <JFXListView fx:id="cart" prefHeight="442.0" prefWidth="560.0" GridPane.rowIndex="1" />
       <GridPane gridLinesVisible="true" prefWidth="554.0" GridPane.rowIndex="2">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />

@@ -71,7 +71,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <mainClass>com.drronidz.App</mainClass>
+                    <mainClass>com.drronidz.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>

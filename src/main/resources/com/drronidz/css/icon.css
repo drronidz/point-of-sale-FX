@@ -26,3 +26,15 @@
 .button-reset:hover .ikonli-font-icon {
     -fx-icon-color:-fx-iconResetHoverColor !important;
 }
+
+/*cart items*/
+.button-add-cart .ikonli-font-icon{
+    -fx-background-radius: 50;
+    -fx-icon-color:-fx-iconActiveColor !important;
+}
+.button-remove-cart .ikonli-font-icon{
+    -fx-icon-color: -fx-iconResetHoverColor !important;
+}
+.button-remove-cart:hover .ikonli-font-icon{
+    -fx-icon-color: -fx-iconResetHoverColor !important;
+}
