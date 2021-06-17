@@ -8,24 +8,23 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<GridPane fx:controller="com.drronidz.controller.CartController" alignment="TOP_CENTER" gridLinesVisible="true" maxWidth="570.0" minWidth="570.0" prefHeight="570.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane alignment="TOP_CENTER" gridLinesVisible="true" maxWidth="600.0" minWidth="600.0" prefHeight="611.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drronidz.controller.CartController">
    <columnConstraints>
-      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="560.0" minWidth="560.0" prefWidth="560.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="595.0" minWidth="595.0" prefWidth="595.0" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="435.200048828125" minHeight="5.5999977111816435" prefHeight="424.8000244140625" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="60.79999771118163" minHeight="50.0" prefHeight="60.79999771118163" valignment="CENTER" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="435.200048828125" minHeight="5.5999977111816435" prefHeight="425.60000228881836" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="219.2" minHeight="0.0" prefHeight="85.19997558593747" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <JFXButton fx:id="enterOrScan" contentDisplay="CENTER" graphicTextGap="5.0" lineSpacing="2.0" maxHeight="40.0" maxWidth="550.0" minHeight="40.0" minWidth="550.0" prefHeight="40.0" prefWidth="550.0" styleClass="button-enterOrScan" stylesheets="@css/button.css" text="ENTER OR SCAN PRODUCT" />
-      <JFXListView fx:id="cart" prefHeight="442.0" prefWidth="560.0" GridPane.rowIndex="1" />
+      <JFXButton fx:id="enterOrScan" contentDisplay="CENTER" graphicTextGap="5.0" lineSpacing="2.0" maxHeight="46.0" maxWidth="575.0" minHeight="40.0" minWidth="575.0" prefHeight="46.0" prefWidth="575.0" styleClass="button-enterOrScan" stylesheets="@css/button.css" text="ENTER OR SCAN PRODUCT" />
+      <JFXListView fx:id="cart" maxWidth="590.0" minWidth="590.0" prefHeight="425.0" prefWidth="590.0" stylesheets="@css/listcell/cart.css" GridPane.rowIndex="1" />
       <GridPane gridLinesVisible="true" prefWidth="554.0" GridPane.rowIndex="2">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="160.0" prefWidth="160.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.20001220703125" minWidth="160.0" prefWidth="166.4000244140625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="263.99997558593753" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="CENTER" vgrow="ALWAYS" />

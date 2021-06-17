@@ -47,64 +47,61 @@ public class CartController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        productList.add(new Product("Converse Gorillaz", 50.00, "43"));
-        productList.add(new Product("Converse AllStar", 100.00, "42"));
-        productList.add(new Product("Converse Magnum", 150.00, "41"));
-        productList.add(new Product("Converse BlackStar", 250.00, "40"));
-        productList.add(new Product("Converse newGeneration", 350.00, "39"));
+        productList.add(new Product("1","#CONV01","Converse Gorillaz", "43",50.00 ,1,100,"url"));
+        productList.add(new Product("2","#CONV02","Converse AllStar", "43",50.00 ,1,100,"url"));
+        productList.add(new Product("3","#CONV03","Converse Magnum", "43",50.00 ,1,100,"url"));
+        productList.add(new Product("4","#CONV04","Converse BlackStar", "43",50.00 ,1,100,"url"));
+
         cart.setItems(products);
 //        cart.setCellFactory( cartCell  -> new CartCellController());
-        cart.setCellFactory(cartCell -> new ListCell<Product>() {
+        cart.setCellFactory((cartCell) -> {
+            return new ListCell<Product>() {
 
-            @FXML
-            public GridPane cartCell;
+                @FXML
+                public GridPane cartCell;
 
-            @FXML
-            private Label details;
+                @FXML
+                private Label details;
 
-            @FXML
-            private Label price;
+                @FXML
+                private Label price;
 
-            @FXML
-            private Label ref;
+                @FXML
+                private Label ref;
 
-            @FXML
-            private Label code;
+                @FXML
+                private Label code;
 
-            public FXMLLoader fxmlLoader;
+                public FXMLLoader fxmlLoader;
 
-            @Override
-            protected void updateItem(Product item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty || (item == null)) {
-                    setGraphic(null);
-                    setText(null);
-                } else {
-                    if (fxmlLoader == null) {
-                        try {
-                            fxmlLoader = new FXMLLoader(getClass().getResource("/com/drronidz/listcell/cart.fxml"));
-                            fxmlLoader.setController(this);
-//                            fxmlLoader.setRoot(this);
-                            fxmlLoader.load();
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                @Override
+                protected void updateItem(Product item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty || (item == null)) {
+                        setGraphic(null);
+                        setText(null);
+                    } else {
+                        if (fxmlLoader == null) {
+                            try {
+                                fxmlLoader = new FXMLLoader(getClass().getResource("/com/drronidz/listcell/cart.fxml"));
+                                fxmlLoader.setController(this);
+    //                            fxmlLoader.setRoot(this);
+                                fxmlLoader.load();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            details.setText(item.getName() + " " + item.getSize() + " x"+ item.getDemandQuantity());
+                            price.setText(String.valueOf(item.getPrice()));
                         }
-
-                        details.setText(item.getName() + " " + item.getSize());
-                        price.setText(String.valueOf(item.getPrice()));
+                        setGraphic(cartCell);
                     }
-                    setGraphic(cartCell);
                 }
-            }
+            };
         });
-        products.clear();
         enterOrScan.setOnAction(event -> {
             System.out.println("Enter Or Scan Pressed !");
-            System.out.println(productList.get(1));
-            products.addAll(productList.get(1));
-
-            cart.setItems(products);
-            cart.refresh();
+            System.out.println(productList.get(0));
+            products.addAll(productList.get(0));
         });
 
     }
