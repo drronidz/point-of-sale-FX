@@ -99,17 +99,17 @@ public class Product {
         this.urlImage = urlImage;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "code='" + code + '\'' +
-                ", reference='" + reference + '\'' +
-                ", name='" + name + '\'' +
-                ", size='" + size + '\'' +
-                ", price=" + price +
-                ", demandQuantity=" + demandQuantity +
-                ", availableQuantity=" + availableQuantity +
-                ", urlImage='" + urlImage + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Product{" +
+//                "code='" + code + '\'' +
+//                ", reference='" + reference + '\'' +
+//                ", name='" + name + '\'' +
+//                ", size='" + size + '\'' +
+//                ", price=" + price +
+//                ", demandQuantity=" + demandQuantity +
+//                ", availableQuantity=" + availableQuantity +
+//                ", urlImage='" + urlImage + '\'' +
+//                '}';
+//    }
 }

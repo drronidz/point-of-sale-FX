@@ -1,21 +1,10 @@
 * {
-    -fx-iconActiveColor:#3cd52f;
-    -fx-iconHoverColor:#3cd52f;
-    -fx-iconDisableColor :#b4b4b2;
-    -fx-iconResetColor:#1c252c;
-    -fx-iconValidateColor:#1c252c;
-    -fx-iconResetHoverColor:#fc5461;
-    -fx-activeColor: #1c252c;
-    -fx-resetColor:#fc5461;
-    -fx-submitColor:#3cd52f;
-    -fx-hoverColor:#131313;
-    -fx-pressColor:#131313;
-    -fx-validateColor:#3cd52f;
-    -fx-pressColorBorder:#3cd52f;
-    -fx-disableColor:#1c252c;
-    -fx-enterOrScan:#b4b4b2;
-    -fx-enterOrScanHover:#4b4a4a;
-    -fx-discountColor:#fc5461;
+    -fx-colorOne:#b4b4b2;
+    -fx-colorTwo:#3cd52f;
+    -fx-colorThree:#1c252c;
+    -fx-colorFour:#fc5461;
+    -fx-colorFive:#4b4b4b;
+    -fx-colorSix:#c3cdd6;
 }
 @font-face {
     src: url('font/LemonMilk.otf');

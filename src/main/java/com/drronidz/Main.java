@@ -50,4 +50,9 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
+
+    public static Parent loadFXML(String pathType, String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
+        return fxmlLoader.load();
+    }
 }

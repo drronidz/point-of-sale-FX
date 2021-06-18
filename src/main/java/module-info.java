@@ -11,7 +11,9 @@ module com.drronidz {
     exports com.drronidz to javafx.graphics;
     exports com.drronidz.model;
     exports com.drronidz.controller to javafx.fxml;
+    exports com.drronidz.controller.drawer to javafx.fxml;
 
     opens com.drronidz to javafx.fxml;
     opens com.drronidz.controller to javafx.fxml;
+    opens com.drronidz.controller.drawer to javafx.fxml;
 }

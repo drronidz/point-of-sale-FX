@@ -44,7 +44,7 @@
                   <URL value="@css/icon.css" />
                </stylesheets>
                <graphic>
-                  <FontIcon iconLiteral="las-calendar" iconSize="32" styleClass="button" tabSize="0" />
+                  <FontIcon iconLiteral="las-calendar" iconSize="32" styleClass="button"  />
                </graphic>
             </JFXButton>
             <JFXButton fx:id="folder" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" focusTraversable="false" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" textOverrun="LEADING_WORD_ELLIPSIS" wrapText="true" GridPane.rowIndex="1">
@@ -154,7 +154,7 @@
                   <URL value="@css/icon.css" />
                </stylesheets>
                <graphic>
-                  <FontIcon iconLiteral="las-shopping-cart" iconSize="40" styleClass="button-validate" tabSize="0" />
+                  <FontIcon iconLiteral="las-shopping-cart" iconSize="40" styleClass="button-validate"  />
                </graphic>
                <GridPane.margin>
                   <Insets left="5.0" right="5.0" />

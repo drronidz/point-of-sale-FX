@@ -1,40 +1,40 @@
 @import "root.css";
 
 .button .ikonli-font-icon {
-    -fx-icon-color:-fx-iconActiveColor !important;
+    -fx-icon-color:-fx-colorTwo !important;
 }
 
 .button:hover .ikonli-font-icon {
-    -fx-icon-color:-fx-iconHoverColor !important;
+    -fx-icon-color:-fx-colorThree !important;
 }
 .button:disabled .ikonli-font-icon {
-    -fx-icon-color:-fx-iconDisableColor !important;
+    -fx-icon-color:-fx-colorOne !important;
 }
 
 /* custom buttons styles */
 /*validate button */
 .button-validate .ikonli-font-icon {
-    -fx-icon-color: -fx-iconValidateColor !important;
+    -fx-icon-color: -fx-colorThree !important;
 }
 .button-validate:hover .ikonli-font-icon {
-    -fx-icon-color:-fx-iconHoverColor;
+    -fx-icon-color:-fx-colorTwo !important;
 }
 /* reset button */
 .button-reset .ikonli-font-icon {
-    -fx-icon-color:-fx-iconResetColor !important;
+    -fx-icon-color:-fx-colorThree !important;
 }
 .button-reset:hover .ikonli-font-icon {
-    -fx-icon-color:-fx-iconResetHoverColor !important;
+    -fx-icon-color:-fx-colorFour !important;
 }
 
 /*cart items*/
-.button-add-cart .ikonli-font-icon{
+.button-increment-cart .ikonli-font-icon{
     -fx-background-radius: 50;
-    -fx-icon-color:-fx-iconActiveColor !important;
+    -fx-icon-color:-fx-colorTwo !important;
 }
-.button-remove-cart .ikonli-font-icon{
-    -fx-icon-color: -fx-iconResetHoverColor !important;
+.button-decrement-cart .ikonli-font-icon{
+    -fx-icon-color: -fx-colorFour !important;
 }
 .button-remove-cart:hover .ikonli-font-icon{
-    -fx-icon-color: -fx-iconResetHoverColor !important;
+    -fx-icon-color: -fx-colorThree !important;
 }

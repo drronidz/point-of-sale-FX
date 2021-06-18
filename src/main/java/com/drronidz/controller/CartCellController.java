@@ -12,7 +12,6 @@ import com.jfoenix.controls.JFXListCell;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -44,7 +43,7 @@ public class CartCellController extends JFXListCell<Product> {
         } else {
             if(fxmlLoader == null) {
                 try {
-                    fxmlLoader = new FXMLLoader(getClass().getResource("/com/drronidz/listcell/cart.fxml"));
+                    fxmlLoader = new FXMLLoader(getClass().getResource("/com/drronidz/listcell/cartcell.fxml"));
                     fxmlLoader.setController(this);
                     fxmlLoader.setRoot(this);
                     fxmlLoader.load();

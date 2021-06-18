@@ -33,7 +33,7 @@
 }
 .discount-label {
     -fx-font-family: "Titillium Web SemiBold";
-    -fx-text-fill: -fx-discountColor;
+    -fx-text-fill: -fx-colorFour;
     -fx-font-size: 20;
 }
 /*cart-item*/

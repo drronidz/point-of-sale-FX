@@ -1,3 +1,4 @@
+@import "../root.css";
 /*********************************** Start Cart ListView ****************************************/
 .list-view {
     -fx-background-color: transparent;
@@ -6,21 +7,21 @@
 }
 
 .list-cell:filled{
-    -fx-background-color: #c3cdd6!important;
+    -fx-background-color: -fx-colorSix !important;
     -fx-background-radius: 5;
     -fx-padding: 5px;
     -fx-border-insets: 5px;
     -fx-background-insets: 5px;
 }
 .list-cell {
-    -fx-background-color: #38d52e!important;
+    -fx-background-color: -fx-colorTwo !important;
     -fx-background-radius: 5;
     -fx-padding: 5px;
     -fx-border-insets: 5px;
     -fx-background-insets: 5px;
 }
 .list-cell:selected:focused{
-    -fx-background-color: #38d52e!important;
+    -fx-background-color: -fx-colorTwo!important;
     -fx-background-radius: 5;
     -fx-padding: 5px;
     -fx-border-insets: 5px;
@@ -76,7 +77,7 @@
 }
 .scroll-bar:horizontal .thumb,  .scroll-bar:vertical .thumb
 {
-    -fx-background-color: #4b4a4a;
+    -fx-background-color:  -fx-colorFive;
     -fx-background-radius: 8em;
     -fx-border-radius: 8em;
     -fx-pref-height: 10px;

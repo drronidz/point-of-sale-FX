@@ -1,0 +1,26 @@
+@import "../root.css";
+.text-field{
+    -fx-font-family: "Lemon/Milk";
+    -fx-font-size: 14;
+    -fx-padding: 3;
+    -fx-prompt-text-fill: #434343;
+    -fx-text-fill: #434343;
+    -fx-background-color: -fx-colorOne;
+}
+.input-line{
+    -fx-background-color: transparent;
+}
+.input-focused-line{
+    -fx-background-color: transparent;
+}
+.error-label{
+    -fx-font-size: 10.5;
+}
+.filter-text-field{
+    -fx-font-family: "Lemon/Milk";
+    -fx-font-size: 14;
+    -fx-prompt-text-fill: #38d52e;
+    -fx-text-fill: #F3F3F3;
+    -fx-background-color: transparent;
+
+}
