@@ -25,6 +25,6 @@
    <children>
        <fx:include fx:id="tools" source="tools.fxml" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.rowSpan="3" />
        <fx:include fx:id="cart" source="cart.fxml" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2" />
-      <JFXDrawer fx:id="enterOrScanDrawer" alignment="TOP_CENTER" defaultDrawerSize="600.0" resizableOnDrag="true" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="3" />
+      <JFXDrawer fx:id="enterOrScanDrawer" alignment="TOP_CENTER" defaultDrawerSize="500.0" miniDrawerSize="-10.0" overLayVisible="false" prefHeight="636.0" prefWidth="1000.0" resizeContent="true" stylesheets="@css/controls/drawer.css" GridPane.columnSpan="3" GridPane.rowSpan="3" />
    </children>
 </GridPane>

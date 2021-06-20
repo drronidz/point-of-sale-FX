@@ -16,4 +16,5 @@ module com.drronidz {
     opens com.drronidz to javafx.fxml;
     opens com.drronidz.controller to javafx.fxml;
     opens com.drronidz.controller.drawer to javafx.fxml;
+    opens com.drronidz.controller.listcell to javafx.fxml;
 }

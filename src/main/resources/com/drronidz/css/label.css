@@ -41,3 +41,12 @@
     -fx-font-family: "Titillium Web SemiBold";
     -fx-font-size: 14;
 }
+/*product listview*/
+.taxe-label{
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 14;
+}
+.taxe-value-label{
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 14;
+}

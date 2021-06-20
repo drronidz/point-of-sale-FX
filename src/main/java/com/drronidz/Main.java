@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 
 /**
  * JavaFX App
@@ -53,6 +54,12 @@ public class Main extends Application {
 
     public static Parent loadFXML(String pathType, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
+        return fxmlLoader.load();
+    }
+    public static Parent loadFXML(String pathType, String fxml, Object controller, Object root) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
+        fxmlLoader.setController(controller);
+//        fxmlLoader.setRoot(root);
         return fxmlLoader.load();
     }
 }

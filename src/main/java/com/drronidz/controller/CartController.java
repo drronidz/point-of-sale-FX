@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -41,11 +42,30 @@ public class CartController extends GridPane implements Initializable {
     @FXML
     private Label total;
 
+    private List<Product> productList = new ArrayList<>();
     public ObservableList<Product> products = FXCollections.observableArrayList();
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        productList.add(
+                new Product(
+                        "1",
+                        "661244889988",
+                        "Gorillaz",
+                        "Converse",
+                        "Black",
+                        "43",
+                        70.00,
+                        10,
+                        100,
+                        7,
+                        true,
+                        "peace",
+                        0,
+                        100,
+                        "image",
+                        LocalDateTime.now())
+        );
 
         cart.setItems(products);
 //        cart.setCellFactory( cartCell  -> new CartCellController());
@@ -83,9 +103,6 @@ public class CartController extends GridPane implements Initializable {
                 @Override
                 protected void updateItem(Product item, boolean empty) {
 
-
-
-
                     super.updateItem(item, empty);
                     if (empty || (item == null)) {
 
@@ -108,9 +125,10 @@ public class CartController extends GridPane implements Initializable {
 //                            integerProperty.set(item.getDemandQuantity());
 
                             details.setText(item.getName() + " " + item.getSize() + " x"+ item.getDemandQuantity());
-                            price.setText(String.valueOf(item.getPrice()));
+                            price.setText(String.valueOf(item.getSalePrice()));
                         }
                         setGraphic(cartCell);
+
                         incrementQte.setOnAction(actionEvent -> {
                             System.out.println("Increment Product Quantity");
                             item.setDemandQuantity(item.getDemandQuantity() + 1);
@@ -130,12 +148,12 @@ public class CartController extends GridPane implements Initializable {
                 }
             };
         });
-//        enterOrScan.setOnAction(event -> {
-//            System.out.println("Enter Or Scan Pressed !");
-//            Random random = new Random();
-//            System.out.println(productList.get(random.nextInt(productList.size())));
-//            products.addAll(productList.get(random.nextInt(productList.size())));
-//        });
+        enterOrScan.setOnMouseClicked(event -> {
+            System.out.println("Enter Or Scan Pressed !");
+            Random random = new Random();
+            System.out.println(productList.get(random.nextInt(productList.size())));
+            products.addAll(productList.get(random.nextInt(productList.size())));
+        });
 
     }
 }

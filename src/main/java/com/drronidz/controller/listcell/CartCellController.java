@@ -1,4 +1,4 @@
-package com.drronidz.controller;
+package com.drronidz.controller.listcell;
 
 /*
 PROJECT NAME : PointOfSaleFX
@@ -52,7 +52,7 @@ public class CartCellController extends JFXListCell<Product> {
                 }
 
                 details.setText(item.getName() + " " + item.getSize());
-                price.setText(String.valueOf(item.getPrice()));
+                price.setText(String.valueOf(item.getSalePrice()));
 
 
                 setGraphic(cartCell);
