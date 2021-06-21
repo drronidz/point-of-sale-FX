@@ -47,6 +47,7 @@ public class MainController implements Initializable {
                         100,
                         7,
                         true,
+                        true,
                         "peace",
                         0,
                         100,

@@ -18,7 +18,8 @@ import java.lang.reflect.Type;
 public class Main extends Application {
 
     private static Scene scene;
-    
+
+
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("main"), 1200, 650);
@@ -56,10 +57,12 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
         return fxmlLoader.load();
     }
-    public static Parent loadFXML(String pathType, String fxml, Object controller, Object root) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
-        fxmlLoader.setController(controller);
+    public static FXMLLoader loadFXML(String pathType, String fxml,FXMLLoader loader, Object controller, Object root) throws IOException {
+        loader = new FXMLLoader(controller.getClass()
+                .getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
+        loader.setController(controller);
 //        fxmlLoader.setRoot(root);
-        return fxmlLoader.load();
+        loader.load();
+        return loader;
     }
 }

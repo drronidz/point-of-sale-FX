@@ -14,7 +14,7 @@
 }
 @font-face {
     src: url('font/TitilliumWeb-Bold.ttf');
-    font-family: 'Titillium Web Bold'
+    font-family: 'Titillium Web Bold';
 }
 /*tools view */
 .ticket {
@@ -40,6 +40,10 @@
 .cart-item-label{
     -fx-font-family: "Titillium Web SemiBold";
     -fx-font-size: 14;
+}
+.demand-total-label {
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 15;
 }
 /*product listview*/
 .taxe-label{

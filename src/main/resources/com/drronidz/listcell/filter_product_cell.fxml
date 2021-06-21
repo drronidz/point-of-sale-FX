@@ -14,8 +14,8 @@
    <graphic>
       <GridPane fx:id="filterProductCell" alignment="CENTER" gridLinesVisible="true" hgap="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="501.0" vgap="2.0">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.8" minWidth="10.0" prefWidth="263.79998168945315" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.8" minWidth="10.0" prefWidth="43.800018310546875" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.8" minWidth="10.0" prefWidth="251.2000427246094" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.8" minWidth="10.0" prefWidth="56.799957275390625" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.59990234374993" minWidth="10.0" prefWidth="138.19998779296873" />
             <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="152.60000000000002" minWidth="10.0" prefWidth="49.00003662109373" />
          </columnConstraints>
@@ -29,11 +29,16 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <Label fx:id="availabeQuantity" minWidth="-Infinity" prefHeight="58.0" prefWidth="47.0" styleClass="cart-item-label" stylesheets="@../css/label.css" text="x1000" GridPane.columnIndex="1" GridPane.rowSpan="2">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
+            <HBox prefHeight="66.0" prefWidth="57.0" GridPane.columnIndex="1" GridPane.rowSpan="2">
+               <children>
+                  <Label alignment="CENTER_RIGHT" minWidth="-Infinity" prefHeight="67.0" prefWidth="15.0" styleClass="cart-item-label" stylesheets="@../css/label.css" text="x">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="availableQuantity" ellipsisString="" graphicTextGap="0.0" minWidth="-Infinity" prefHeight="78.0" prefWidth="38.0" styleClass="demand-total-label" stylesheets="@../css/label.css" text="1000" wrapText="true" />
+               </children>
+            </HBox>
             <HBox spacing="1.0" GridPane.rowIndex="1">
                <children>
                   <Label fx:id="price" ellipsisString="" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="26.0" prefWidth="68.0" styleClass="cart-item-label" stylesheets="@../css/label.css" text="1000.00 £" wrapText="true">
@@ -89,7 +94,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
                <children>
-                  <JFXCheckBox fx:id="selectProduct" alignment="CENTER_RIGHT" contentDisplay="RIGHT" ellipsisString="" focusTraversable="false" prefHeight="37.0" prefWidth="4.0" scaleX="2.0" scaleY="2.0" textOverrun="CLIP" translateX="3.0" translateY="-2.0" />
+                  <JFXCheckBox fx:id="isChecked" alignment="CENTER_RIGHT" contentDisplay="RIGHT" ellipsisString="" focusTraversable="false" prefHeight="37.0" prefWidth="4.0" scaleX="2.0" scaleY="2.0" textOverrun="CLIP" translateX="3.0" translateY="-2.0" />
                </children>
             </HBox>
          </children>

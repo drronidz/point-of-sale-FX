@@ -10,6 +10,8 @@ import com.drronidz.controller.listcell.FilterProductCellController;
 import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class filterProductDrawerController implements Initializable {
+public class FilterProductDrawerController implements Initializable {
 
     @FXML
     public JFXListView<Product> productListView;
@@ -33,7 +35,7 @@ public class filterProductDrawerController implements Initializable {
     private ObservableList<Product> products = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Product productOne =    new Product(
+        Product productOne = new Product(
                 "1",
                 "661244889988",
                 "Gorillaz",
@@ -45,6 +47,45 @@ public class filterProductDrawerController implements Initializable {
                 100,
                 7,
                 true,
+                false,
+                "peace",
+                0,
+                100,
+                "image",
+                LocalDateTime.now()
+        );
+        Product productTwo = new Product(
+                "1",
+                "661244889988",
+                "Gorillaz",
+                "Converse",
+                "Black",
+                "43",
+                70.00,
+                10,
+                100,
+                7,
+                true,
+                false,
+                "peace",
+                0,
+                100,
+                "image",
+                LocalDateTime.now()
+        );
+        Product productThree = new Product(
+                "1",
+                "661244889988",
+                "Gorillaz",
+                "Converse",
+                "Black",
+                "43",
+                70.00,
+                10,
+                100,
+                7,
+                true,
+                false,
                 "peace",
                 0,
                 100,
@@ -52,11 +93,10 @@ public class filterProductDrawerController implements Initializable {
                 LocalDateTime.now()
         );
         productList.addAll(
-               List.of(productOne,productOne,productOne,productOne,productOne)
+               List.of(productOne, productTwo, productThree)
         );
         products.addAll(productList);
         productListView.setItems(products);
         productListView.setCellFactory(filterProductCell -> new FilterProductCellController());
-
     }
 }

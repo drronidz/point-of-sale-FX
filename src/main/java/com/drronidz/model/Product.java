@@ -24,6 +24,7 @@ public class Product {
     private double saleBeforeTaxe;
     private double taxes;
     private boolean isActive;
+    private boolean isSelected;
     private String unitOfMeasure;
     private int demandQuantity;
     private int availableQuantity;
@@ -42,6 +43,7 @@ public class Product {
                    double saleBeforeTaxe,
                    double taxes,
                    boolean isActive,
+                   boolean isSelected,
                    String unitOfMeasure,
                    int demandQuantity,
                    int availableQuantity,
@@ -59,6 +61,7 @@ public class Product {
         this.taxes = taxes;
         this.salePrice = saleBeforeTaxe + (saleBeforeTaxe * taxes);
         this.isActive = isActive;
+        this.isSelected = isSelected;
         this.unitOfMeasure = unitOfMeasure;
         this.demandQuantity = demandQuantity;
         this.availableQuantity = availableQuantity;
@@ -161,6 +164,14 @@ public class Product {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 
     public String getUnitOfMeasure() {

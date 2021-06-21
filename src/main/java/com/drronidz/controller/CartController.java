@@ -1,5 +1,6 @@
 package com.drronidz.controller;
 
+import com.drronidz.controller.listcell.CartCellController;
 import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -47,112 +48,32 @@ public class CartController extends GridPane implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        productList.add(
-                new Product(
-                        "1",
-                        "661244889988",
-                        "Gorillaz",
-                        "Converse",
-                        "Black",
-                        "43",
-                        70.00,
-                        10,
-                        100,
-                        7,
-                        true,
-                        "peace",
-                        0,
-                        100,
-                        "image",
-                        LocalDateTime.now())
+        Product productOne = new Product(
+                "1",
+                "661244889988",
+                "Gorillaz",
+                "Converse",
+                "Black",
+                "43",
+                70.00,
+                10,
+                100,
+                7,
+                true,
+                false,
+                "peace",
+                0,
+                100,
+                "image",
+                LocalDateTime.now()
         );
 
         cart.setItems(products);
-//        cart.setCellFactory( cartCell  -> new CartCellController());
-        cart.setCellFactory((cartCell) -> {
-            return new ListCell<Product>() {
-
-                @FXML
-                public GridPane cartCell;
-
-                @FXML
-                private Label details;
-
-                @FXML
-                private Label price;
-
-                @FXML
-                private Label ref;
-
-                @FXML
-                private Label code;
-
-                @FXML
-                private Label demandQte;
-
-                @FXML
-                private JFXButton incrementQte;
-
-                @FXML
-                private JFXButton decrimentQte;
-
-                public FXMLLoader fxmlLoader;
-
-
-
-                @Override
-                protected void updateItem(Product item, boolean empty) {
-
-                    super.updateItem(item, empty);
-                    if (empty || (item == null)) {
-
-                        setGraphic(null);
-                        setText(null);
-                    } else {
-                        SimpleIntegerProperty integerProperty = new SimpleIntegerProperty();
-                        integerProperty.set(item.getDemandQuantity());
-
-                        if (fxmlLoader == null) {
-                            try {
-                                fxmlLoader = new FXMLLoader(getClass().getResource("/com/drronidz/listcell/cartcell.fxml"));
-                                fxmlLoader.setController(this);
-    //                            fxmlLoader.setRoot(this);
-                                fxmlLoader.load();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-
-//                            integerProperty.set(item.getDemandQuantity());
-
-                            details.setText(item.getName() + " " + item.getSize() + " x"+ item.getDemandQuantity());
-                            price.setText(String.valueOf(item.getSalePrice()));
-                        }
-                        setGraphic(cartCell);
-
-                        incrementQte.setOnAction(actionEvent -> {
-                            System.out.println("Increment Product Quantity");
-                            item.setDemandQuantity(item.getDemandQuantity() + 1);
-                            integerProperty.set(item.getDemandQuantity());
-
-                        });
-
-                        decrimentQte.setOnAction(actionEvent -> {
-                            System.out.println("Decrement Product Quantity");
-                            item.setDemandQuantity(item.getDemandQuantity() - 1);
-                            integerProperty.set(item.getDemandQuantity());
-                        });
-
-                        demandQte.textProperty().bind(integerProperty.asString());
-                    }
-
-                }
-            };
-        });
+        cart.setCellFactory( cartCell  -> new CartCellController());
         enterOrScan.setOnMouseClicked(event -> {
             System.out.println("Enter Or Scan Pressed !");
-            Random random = new Random();
-            System.out.println(productList.get(random.nextInt(productList.size())));
-            products.addAll(productList.get(random.nextInt(productList.size())));
+            productOne.setDemandQuantity(1);
+            products.addAll(productOne);
         });
 
     }

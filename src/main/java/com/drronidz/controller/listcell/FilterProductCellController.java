@@ -10,14 +10,26 @@ import com.drronidz.Main;
 import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXListCell;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class FilterProductCellController extends JFXListCell<Product> {
+public class FilterProductCellController extends AbstractListCell<Product>  {
+
+    @FXML
+    private JFXListCell<Product> listCell;
+
     @FXML
     private GridPane filterProductCell;
 
@@ -25,7 +37,7 @@ public class FilterProductCellController extends JFXListCell<Product> {
     private Label details;
 
     @FXML
-    private Label availabeQuantity;
+    private Label availableQuantity;
 
     @FXML
     private Label price;
@@ -46,24 +58,22 @@ public class FilterProductCellController extends JFXListCell<Product> {
     private Label barCode;
 
     @FXML
-    private JFXCheckBox selectProduct;
+    private JFXCheckBox isChecked;
 
-    public FXMLLoader fxmlLoader;
+
 
     @Override
     protected void updateItem(Product item, boolean empty) {
+
         super.updateItem(item, empty);
         if(empty || (item == null)) {
             setText(null);
             setGraphic(null);
         } else {
+
             if (fxmlLoader == null) {
                 try {
-                    Main.loadFXML(
-                            "listcell",
-                            "filter_product_cell",
-                            this,
-                            this);
+                  loadFXML("filter_product_cell",this,this);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -76,11 +86,13 @@ public class FilterProductCellController extends JFXListCell<Product> {
                 );
                 price.setText(item.getSalePrice() + " $");
                 discount.setText("-" + item.getDiscount() + "%");
-                availabeQuantity.setText("x" + item.getAvailableQuantity());
+                availableQuantity.setText(String.valueOf(item.getDemandQuantity()));
             }
             setGraphic(filterProductCell);
             setText(null);
-
         }
+
     }
+
+
 }
