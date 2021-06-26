@@ -125,23 +125,29 @@ public class FilterProductDrawerController implements Initializable {
         productListView.setItems(products);
         productListView.setCellFactory(filterProductCell -> new FilterProductCellController());
 
+        handleAddAll();
         handleClearSelection();
 
-        addAllToCart.setOnMouseClicked(mouseEvent -> {
-            for (Product product: products) {
-                product.setSelected(!product.isSelected());
-            }
-        });
+
 
 
 
 
     }
+
     public void handleClearSelection() {
         clearSelection.setOnMouseClicked(mouseEvent -> {
             System.out.println("clear selection (uncheck JFXCheckbox)");
             for (Product product: products) {
                 product.setSelected(false);
+            }
+        });
+    }
+
+    public void handleAddAll() {
+        addAllToCart.setOnMouseClicked(mouseEvent -> {
+            for (Product product: products) {
+                product.setSelected(true);
             }
         });
     }
