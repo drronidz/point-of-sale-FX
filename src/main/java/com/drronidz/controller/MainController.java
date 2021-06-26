@@ -25,38 +25,18 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        // Open or Close Drawer !
+       handleOpenOrCloseFilterProductDrawer();
+       handleAddToCart();
+    }
+    public void handleOpenOrCloseFilterProductDrawer() {
+        // Open or Close Filter Product Drawer !
         cartController.enterOrScan.setOnAction(mouseEvent -> {
             filterProductDrawerController.openOrCloseDrawer();
         });
-        for (Product product: filterProductDrawerController.productListView.getItems()) {
-            if(!product.isSelected()) {
-                product.setSelected(false);
-                cartController.cart.getItems().remove(product);
-                cartController.cart.refresh();
-            }
-        }
-        // Add product form FilterProductDrawer to Cart
-//        filterProductDrawerController.addToCart.setOnMouseClicked(mouseEvent -> {
-//            System.out.println("addToCart pressed!");
-//            ObservableList<Product> filterProductList = filterProductDrawerController.productListView.getItems();
-//
-//            for (Product product: filterProductList) {
-//                if(product.isSelected()) {
-//                    if(!cartController.cart.getItems().contains(product)) {
-//                        System.out.println(product);
-//                        product.setDemandQuantity(1);
-//                        cartController.cart.getItems().add(product);
-//                        cartController.cart.refresh();
-//                    } else {
-//                        System.out.println("product exists in the list");
-//                    }
-//                } else {
-//                    System.out.println( product.toString() + " product product not selected list");
-//                }
-//            }
-//        });
+    }
 
+    public void handleAddToCart () {
+        // Handle add to Cart from Filter Product Drawer !
         for (Product product: filterProductDrawerController.productListView.getItems()) {
             product.isSelectedProductProperty().addListener(((observableValue, oldValue, newValue) -> {
                 if(!product.isSelected()) {
