@@ -6,6 +6,10 @@ USER NAME : @ DRRONIDZ
 DATE : 6/16/2021 1:06 AM
 */
 
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -21,12 +25,16 @@ public class Product {
     private double cost;
     private int discount;
     private double salePrice;
+    private SimpleDoubleProperty salePriceProduct;
     private double saleBeforeTaxe;
     private double taxes;
     private boolean isActive;
-    private boolean isSelected;
+    private SimpleBooleanProperty activeProduct;
+    private boolean selected;
+    private SimpleBooleanProperty selectProduct;
     private String unitOfMeasure;
     private int demandQuantity;
+    private SimpleIntegerProperty demandQuantityProduct;
     private int availableQuantity;
     private String urlImage;
     private LocalDateTime createdAt;
@@ -43,7 +51,7 @@ public class Product {
                    double saleBeforeTaxe,
                    double taxes,
                    boolean isActive,
-                   boolean isSelected,
+                   boolean selected,
                    String unitOfMeasure,
                    int demandQuantity,
                    int availableQuantity,
@@ -59,15 +67,21 @@ public class Product {
         this.discount = discount;
         this.saleBeforeTaxe = saleBeforeTaxe;
         this.taxes = taxes;
-        this.salePrice = saleBeforeTaxe + (saleBeforeTaxe * taxes);
+        this.salePrice = saleBeforeTaxe + ((saleBeforeTaxe * taxes)/100);
         this.isActive = isActive;
-        this.isSelected = isSelected;
+        this.selected = selected;
         this.unitOfMeasure = unitOfMeasure;
         this.demandQuantity = demandQuantity;
         this.availableQuantity = availableQuantity;
         this.urlImage = urlImage;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = updatedAt;
+
+        // Simple Object Properties
+        this.selectProduct = new SimpleBooleanProperty(selected);
+        this.activeProduct = new SimpleBooleanProperty(isActive);
+        this.demandQuantityProduct = new SimpleIntegerProperty(demandQuantity);
+        this.salePriceProduct = new SimpleDoubleProperty(salePrice);
     }
 
     public String getCode() {
@@ -139,6 +153,7 @@ public class Product {
     }
 
     public void setSalePrice(double salePrice) {
+        this.salePriceProduct.set(salePrice);
         this.salePrice = salePrice;
     }
 
@@ -163,15 +178,17 @@ public class Product {
     }
 
     public void setActive(boolean active) {
-        isActive = active;
+        this.isActive = active;
+        this.activeProduct.set(active);
     }
 
     public boolean isSelected() {
-        return isSelected;
+        return this.selectProduct.get();
     }
 
     public void setSelected(boolean selected) {
-        isSelected = selected;
+        this.selected = selected;
+        this.selectProduct.set(selected);
     }
 
     public String getUnitOfMeasure() {
@@ -183,11 +200,12 @@ public class Product {
     }
 
     public int getDemandQuantity() {
-        return demandQuantity;
+        return this.demandQuantityProduct.get();
     }
 
     public void setDemandQuantity(int demandQuantity) {
         this.demandQuantity = demandQuantity;
+        this.demandQuantityProduct.set(demandQuantity);
     }
 
     public int getAvailableQuantity() {
@@ -221,4 +239,19 @@ public class Product {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    // Simple Object Properties
+
+    public SimpleBooleanProperty isSelectedProductProperty() {
+        return selectProduct;
+    }
+
+    public SimpleBooleanProperty isActiveProductProperty() {
+        return activeProduct;
+    }
+
+    public SimpleIntegerProperty demandQuantityProductProperty() {
+        return demandQuantityProduct;
+    }
+
 }

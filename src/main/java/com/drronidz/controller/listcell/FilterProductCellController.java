@@ -7,10 +7,14 @@ DATE : 6/20/2021 12:20 AM
 */
 
 import com.drronidz.Main;
+import com.drronidz.controller.CartController;
 import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXListCell;
+import javafx.beans.binding.BooleanBinding;
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -25,7 +29,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FilterProductCellController extends AbstractListCell<Product>  {
+public class FilterProductCellController extends AbstractListCell<Product> implements Initializable {
 
     @FXML
     private JFXListCell<Product> listCell;
@@ -60,39 +64,53 @@ public class FilterProductCellController extends AbstractListCell<Product>  {
     @FXML
     private JFXCheckBox isChecked;
 
-
-
     @Override
     protected void updateItem(Product item, boolean empty) {
-
         super.updateItem(item, empty);
-        if(empty || (item == null)) {
+        if (empty) {
             setText(null);
             setGraphic(null);
         } else {
-
             if (fxmlLoader == null) {
                 try {
-                  loadFXML("filter_product_cell",this,this);
+
+                    loadFXML("filter_product_cell",this,this,null);
+
+                    details.setText(
+                            item.getCategory() + " "
+                                    + item.getName() + " "
+                                    + item.getColor() + " "
+                                    + item.getSize()
+                    );
+
+                    price.setText(String.valueOf(item.getSalePrice()));
+
+                    // Bind JFXCheckBox to SimpleBooleanProperty
+                    // Add a Listener to SimpleBooleanProperty related JFXCheckbox
+
+                    bindCheckBox(isChecked,item.isSelectedProductProperty());
+
+                    item.isSelectedProductProperty().addListener(((observableValue, oldValue, newValue) -> {
+                        item.setSelected(newValue);
+                        isChecked.setSelected(newValue);
+                    }));
+
+                    isChecked.selectedProperty().addListener(((observableValue, oldValue, newValue) -> {
+                        item.setSelected(newValue);
+                    }));
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                details.setText(
-                        item.getCategory() + " "
-                                + item.getName() + " "
-                                + item.getColor() + " "
-                                + item.getSize()
-                );
-                price.setText(item.getSalePrice() + " $");
-                discount.setText("-" + item.getDiscount() + "%");
-                availableQuantity.setText(String.valueOf(item.getDemandQuantity()));
             }
+
             setGraphic(filterProductCell);
             setText(null);
         }
-
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
 }

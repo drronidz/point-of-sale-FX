@@ -21,7 +21,7 @@
 }
 /* reset button */
 .button-reset .ikonli-font-icon {
-    -fx-icon-color:-fx-colorThree !important;
+    -fx-icon-color:-fx-colorSeven !important;
 }
 .button-reset:hover .ikonli-font-icon {
     -fx-icon-color:-fx-colorFour !important;

@@ -6,80 +6,71 @@ USER NAME : @ DRRONIDZ
 DATE : 6/17/2021 3:51 PM
 */
 
-import com.drronidz.Main;
+import com.drronidz.controller.drawer.FilterProductDrawerController;
 import com.drronidz.model.Product;
-import com.jfoenix.controls.JFXDrawer;
-import javafx.application.Platform;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-
-import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
     @FXML public CartController cartController;
-    @FXML public JFXDrawer enterOrScanDrawer;
+//    @FXML public JFXDrawer enterOrScanDrawer;
+    @FXML public FilterProductDrawerController filterProductDrawerController;
 
-    private List<Product> productList = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        productList.add(
-                new Product(
-                        "1",
-                        "661244889988",
-                        "Gorillaz",
-                        "Converse",
-                        "Black",
-                        "43",
-                        70.00,
-                        10,
-                        100,
-                        7,
-                        true,
-                        true,
-                        "peace",
-                        0,
-                        100,
-                        "image",
-                        LocalDateTime.now())
-        );
-        try {
-            GridPane gridPane = (GridPane) Main.loadFXML("drawer","filterProductDrawer");
-            enterOrScanDrawer.setSidePane(gridPane);
-            enterOrScanDrawer.toBack();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+        // Open or Close Drawer !
         cartController.enterOrScan.setOnAction(mouseEvent -> {
-//            Random random = new Random();
-//            System.out.println(productList.get(random.nextInt(productList.size())));
-//            cartController.products.addAll(productList.get(random.nextInt(productList.size())));
-            if(enterOrScanDrawer.isOpened()) {
-                enterOrScanDrawer.toBack();
-                enterOrScanDrawer.close();
-            }
-            if(enterOrScanDrawer.isClosed()) {
-                enterOrScanDrawer.toFront();
-                enterOrScanDrawer.open();
-            }
+            filterProductDrawerController.openOrCloseDrawer();
         });
+        for (Product product: filterProductDrawerController.productListView.getItems()) {
+            if(!product.isSelected()) {
+                product.setSelected(false);
+                cartController.cart.getItems().remove(product);
+                cartController.cart.refresh();
+            }
+        }
+        // Add product form FilterProductDrawer to Cart
+//        filterProductDrawerController.addToCart.setOnMouseClicked(mouseEvent -> {
+//            System.out.println("addToCart pressed!");
+//            ObservableList<Product> filterProductList = filterProductDrawerController.productListView.getItems();
+//
+//            for (Product product: filterProductList) {
+//                if(product.isSelected()) {
+//                    if(!cartController.cart.getItems().contains(product)) {
+//                        System.out.println(product);
+//                        product.setDemandQuantity(1);
+//                        cartController.cart.getItems().add(product);
+//                        cartController.cart.refresh();
+//                    } else {
+//                        System.out.println("product exists in the list");
+//                    }
+//                } else {
+//                    System.out.println( product.toString() + " product product not selected list");
+//                }
+//            }
+//        });
 
-        enterOrScanDrawer.setOnMouseClicked(mouseEvent -> {
-                enterOrScanDrawer.close();
-                enterOrScanDrawer.toBack();
-        });
+        for (Product product: filterProductDrawerController.productListView.getItems()) {
+            product.isSelectedProductProperty().addListener(((observableValue, oldValue, newValue) -> {
+                if(!product.isSelected()) {
+                    cartController.products.remove(product);
+                } else {
+                    if(cartController.products.contains(product)) {
+                        System.out.println("product already exists in the list");
+                    } else {
+                        product.setDemandQuantity(1);
+                        cartController.products.add(product);
+                    }
+                }
+            }));
+        }
     }
+
 }

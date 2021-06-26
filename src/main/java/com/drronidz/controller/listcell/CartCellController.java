@@ -12,14 +12,22 @@ import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListCell;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.util.converter.NumberStringConverter;
 
 import java.io.IOException;
+import java.net.URL;
+import java.text.NumberFormat;
+import java.util.ResourceBundle;
 
-public class CartCellController extends AbstractListCell<Product> {
+public class CartCellController extends AbstractListCell<Product> implements Initializable {
 
     @FXML
     public GridPane cartCell;
@@ -45,49 +53,58 @@ public class CartCellController extends AbstractListCell<Product> {
     @FXML
     private JFXButton decrementQte;
 
+    FXMLLoader fxmlLoader;
+
+    double subTotal;
+
     @Override
     protected void updateItem(Product item, boolean empty) {
 
         super.updateItem(item, empty);
-        if (empty || (item == null)) {
+        if (empty) {
             setGraphic(null);
             setText(null);
         } else {
-            SimpleIntegerProperty integerProperty = new SimpleIntegerProperty();
-            integerProperty.set(item.getDemandQuantity());
 
             if (fxmlLoader == null) {
                 try {
-                    loadFXML("cart_cell",this,this);
+                    loadFXML("cart_cell",this,this,fxmlLoader);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
                 details.setText(item.getName() + " " + item.getSize() + " x"+ item.getDemandQuantity());
                 price.setText(String.valueOf(item.getSalePrice()));
+                bindLabel(demandQuantity,item.demandQuantityProductProperty());
+                handleIncrementQuantity(item);
+                handleDecrementQuantity(item);
             }
-
             setText(null);
             setGraphic(cartCell);
-
-            incrementQte.setOnAction(actionEvent -> {
-                System.out.println("Increment Product Quantity");
-                item.setDemandQuantity(item.getDemandQuantity() + 1);
-                integerProperty.set(item.getDemandQuantity());
-
-            });
-
-            decrementQte.setOnAction(actionEvent -> {
-                System.out.println("Decrement Product Quantity");
-                item.setDemandQuantity(item.getDemandQuantity() - 1);
-                integerProperty.set(item.getDemandQuantity());
-                if(item.getDemandQuantity() <= 0) {
-                    getListView().getItems().remove(item);
-                }
-            });
-
-            demandQuantity.textProperty().bind(integerProperty.asString());
-
         }
+    }
+
+    public void handleIncrementQuantity(Product item) {
+        incrementQte.setOnAction(actionEvent -> {
+            System.out.println("Increment Product Quantity");
+            item.setDemandQuantity(item.getDemandQuantity() + 1);
+        });
+    }
+
+    public void handleDecrementQuantity(Product item) {
+        decrementQte.setOnAction(actionEvent -> {
+            System.out.println("Decrement Product Quantity");
+            item.setDemandQuantity(item.getDemandQuantity() - 1);
+            if(item.getDemandQuantity() <= 0) {
+                // Uncheck
+                item.setSelected(false);
+                getListView().getItems().remove(item);
+                getListView().refresh();
+            }
+        });
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }
