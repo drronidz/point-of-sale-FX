@@ -92,6 +92,7 @@ public class FilterProductCellController extends AbstractListCell<Product> imple
 
                     item.isSelectedProductProperty().addListener(((observableValue, oldValue, newValue) -> {
                         item.setSelected(newValue);
+                        item.setName(item.toString());
                         isChecked.setSelected(newValue);
                     }));
 

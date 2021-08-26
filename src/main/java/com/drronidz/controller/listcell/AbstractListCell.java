@@ -10,6 +10,7 @@ import com.drronidz.Main;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXListCell;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +40,9 @@ public  class AbstractListCell <T> extends JFXListCell <T> {
         checkBox.selectedProperty().bindBidirectional(booleanProperty);
     }
     public void bindLabel (Label label, SimpleIntegerProperty objectProperty) {
+        label.textProperty().bindBidirectional(objectProperty,new NumberStringConverter());
+    }
+    public void bindLabel (Label label, SimpleDoubleProperty objectProperty) {
         label.textProperty().bindBidirectional(objectProperty,new NumberStringConverter());
     }
 

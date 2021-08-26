@@ -56,7 +56,7 @@ public class FilterProductDrawerController implements Initializable {
     @FXML
     private JFXButton addAllToCart;
 
-    private ObservableList<Product> products = FXCollections.observableArrayList();
+    public ObservableList<Product> products = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -20,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.util.converter.NumberStringConverter;
 
 import java.io.IOException;
@@ -37,6 +38,9 @@ public class CartCellController extends AbstractListCell<Product> implements Ini
 
     @FXML
     private Label price;
+
+    @FXML
+    private Label discount;
 
     @FXML
     private Label ref;
@@ -72,9 +76,18 @@ public class CartCellController extends AbstractListCell<Product> implements Ini
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                details.setText(item.getName() + " " + item.getSize() + " x"+ item.getDemandQuantity());
-                price.setText(String.valueOf(item.getSalePrice()));
                 bindLabel(demandQuantity,item.demandQuantityProductProperty());
+                bindLabel(discount, item.discountProductProperty());
+                details.setText(
+                        item.getCategory() + " "
+                                + item.getName() + " "
+                                + item.getColor() + " "
+                                + item.getSize()
+                );
+                price.setText(String.valueOf(item.getSalePrice()));
+                price.setMinWidth(Region.USE_PREF_SIZE);
+                discount.setText(String.valueOf(item.getDiscount()));
+
                 handleIncrementQuantity(item);
                 handleDecrementQuantity(item);
             }

@@ -57,12 +57,9 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
         return fxmlLoader.load();
     }
-    public static FXMLLoader loadFXML(String pathType, String fxml,FXMLLoader loader, Object controller, Object root) throws IOException {
-        loader = new FXMLLoader(controller.getClass()
-                .getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
-        loader.setController(controller);
-//        fxmlLoader.setRoot(root);
-        loader.load();
-        return loader;
+
+    public static FXMLLoader loadFXMLoader(String pathType, String fxml) throws IOException {
+        return new FXMLLoader(Main.class.getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
     }
+
 }

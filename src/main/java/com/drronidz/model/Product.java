@@ -23,7 +23,8 @@ public class Product {
     private String color;
     private String size;
     private double cost;
-    private int discount;
+    private double discount;
+    private SimpleDoubleProperty discountProduct;
     private double salePrice;
     private SimpleDoubleProperty salePriceProduct;
     private double saleBeforeTaxe;
@@ -47,7 +48,7 @@ public class Product {
                    String color,
                    String size,
                    double cost,
-                   int discount,
+                   double discount,
                    double saleBeforeTaxe,
                    double taxes,
                    boolean isActive,
@@ -82,6 +83,7 @@ public class Product {
         this.activeProduct = new SimpleBooleanProperty(isActive);
         this.demandQuantityProduct = new SimpleIntegerProperty(demandQuantity);
         this.salePriceProduct = new SimpleDoubleProperty(salePrice);
+        this.discountProduct = new SimpleDoubleProperty(discount);
     }
 
     public String getCode() {
@@ -140,11 +142,12 @@ public class Product {
         this.cost = cost;
     }
 
-    public int getDiscount() {
-        return discount;
+    public double getDiscount() {
+        return discountProduct.get();
     }
 
-    public void setDiscount(int discount) {
+    public void setDiscount(double discount) {
+        this.discountProduct.set(discount);
         this.discount = discount;
     }
 
@@ -254,4 +257,5 @@ public class Product {
         return demandQuantityProduct;
     }
 
+    public SimpleDoubleProperty  discountProductProperty() { return discountProduct; }
 }

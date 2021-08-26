@@ -19,6 +19,9 @@ public class ToolsController extends GridPane implements Initializable {
     @FXML
     public JFXButton removeItem;
 
+    @FXML
+    public JFXButton discount;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
