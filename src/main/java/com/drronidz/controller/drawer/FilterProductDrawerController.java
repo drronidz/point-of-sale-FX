@@ -6,34 +6,22 @@ USER NAME : @ DRRONIDZ
 DATE : 6/17/2021 4:49 PM
 */
 
-import com.drronidz.controller.CartController;
+
 import com.drronidz.controller.listcell.FilterProductCellController;
 import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.animation.TranslateTransition;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.cell.CheckBoxListCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class FilterProductDrawerController implements Initializable {
@@ -120,18 +108,13 @@ public class FilterProductDrawerController implements Initializable {
                 "image",
                 LocalDateTime.now()
         );
-        products.addAll(productOne,productTwo,productThree);
-        productListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        productListView.setItems(products);
-        productListView.setCellFactory(filterProductCell -> new FilterProductCellController());
+        products.clear();
 
+        products.addAll(productOne,productTwo,productThree);
+        productListView.setCellFactory(filterProductCell -> new FilterProductCellController());
+        productListView.setItems(products);
         handleAddAll();
         handleClearSelection();
-
-
-
-
-
 
     }
 

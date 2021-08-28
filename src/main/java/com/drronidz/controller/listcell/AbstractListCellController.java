@@ -7,6 +7,7 @@ DATE : 6/21/2021 12:51 AM
 */
 
 import com.drronidz.Main;
+import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXListCell;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -20,7 +21,7 @@ import javafx.util.converter.NumberStringConverter;
 import java.io.IOException;
 import java.security.PublicKey;
 
-public  class AbstractListCell <T> extends JFXListCell <T> {
+public class AbstractListCellController<T> extends JFXListCell <T> {
 
     public static final String PATH_TYPE = "listcell";
     public static final String MAIN_PATH ="/com/drronidz/";
@@ -28,7 +29,7 @@ public  class AbstractListCell <T> extends JFXListCell <T> {
     public static final String FILE_EXTENSION =".fxml";
     FXMLLoader fxmlLoader;
 
-    public void loadFXML(String fxml, Object controller, Object root, FXMLLoader loader) throws IOException {
+    public void loadFXML(String fxml, Object controller) throws IOException {
         fxmlLoader = new FXMLLoader();
         fxmlLoader  = new FXMLLoader(controller.getClass().getResource(MAIN_PATH + PATH_TYPE + SEPARATOR + fxml + FILE_EXTENSION));
         fxmlLoader.setController(controller);
@@ -36,9 +37,11 @@ public  class AbstractListCell <T> extends JFXListCell <T> {
         fxmlLoader.load();
     }
 
+
     public void bindCheckBox(JFXCheckBox checkBox, SimpleBooleanProperty booleanProperty) {
         checkBox.selectedProperty().bindBidirectional(booleanProperty);
     }
+
     public void bindLabel (Label label, SimpleIntegerProperty objectProperty) {
         label.textProperty().bindBidirectional(objectProperty,new NumberStringConverter());
     }

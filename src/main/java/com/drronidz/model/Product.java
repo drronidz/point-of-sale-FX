@@ -37,6 +37,7 @@ public class Product {
     private int demandQuantity;
     private SimpleIntegerProperty demandQuantityProduct;
     private int availableQuantity;
+    private SimpleIntegerProperty availableQuantityProdcut;
     private String urlImage;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -84,6 +85,8 @@ public class Product {
         this.demandQuantityProduct = new SimpleIntegerProperty(demandQuantity);
         this.salePriceProduct = new SimpleDoubleProperty(salePrice);
         this.discountProduct = new SimpleDoubleProperty(discount);
+        this.availableQuantityProdcut = new SimpleIntegerProperty(availableQuantity);
+
     }
 
     public String getCode() {
@@ -217,6 +220,7 @@ public class Product {
 
     public void setAvailableQuantity(int availableQuantity) {
         this.availableQuantity = availableQuantity;
+        this.availableQuantityProdcut.set(availableQuantity);
     }
 
     public String getUrlImage() {
@@ -258,4 +262,8 @@ public class Product {
     }
 
     public SimpleDoubleProperty  discountProductProperty() { return discountProduct; }
+
+    public SimpleIntegerProperty availableQuantityProductProperty() {
+        return availableQuantityProdcut;
+    }
 }
