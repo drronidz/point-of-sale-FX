@@ -1,0 +1,50 @@
+@import "../root.css";
+@import "../button.css";
+
+/*cart buttons */
+.button-enterOrScan {
+    -fx-background-color:#b4b4b2;
+    -fx-font-family: 'Titillium Web Regular';
+    -fx-font-size: 18;
+}
+.button-enterOrScan:hover {
+    -fx-text-transform: uppercase;
+    -fx-font-family: 'Titillium Web Regular';
+    -fx-font-size: 18;
+    -fx-background-color: -fx-colorFive;
+    -fx-text-fill: -fx-colorTwo;
+}
+
+.button-increment-cart {
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}
+.button-decrement-cart {
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}
+
+/*cart label*/
+.label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 20;
+}
+.total-label {
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 34;
+}
+.discount-label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-text-fill: -fx-colorFour;
+    -fx-font-size: 20;
+}
+
+/*product listview*/
+.taxe-label{
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 14;
+}
+.taxe-value-label{
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 14;
+}

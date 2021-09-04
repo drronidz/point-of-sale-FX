@@ -39,10 +39,5 @@
     -fx-icon-color: -fx-colorThree !important;
 }
 
-/* Calculator */
-.button-calculator .ikonli-font-icon{
-    -fx-icon-color: -fx-colorTwo !important;
-}
-.button-calculator:hover .ikonli-font-icon{
-    -fx-icon-color: -fx-colorThree !important;
-}
+
+

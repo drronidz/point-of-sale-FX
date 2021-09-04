@@ -28,7 +28,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </HBox>
-      <Label fx:id="message" prefHeight="100.0" prefWidth="340.0" styleClass="confirmation-content-label" stylesheets="@../css/label.css" text="Are you sure of this ?" GridPane.rowIndex="1">
+      <Label fx:id="message" wrapText="true" prefHeight="100.0" prefWidth="340.0" styleClass="confirmation-content-label" stylesheets="@../css/label.css" text="Are you sure of this ?" GridPane.rowIndex="1">
          <padding>
             <Insets left="5.0" />
          </padding>

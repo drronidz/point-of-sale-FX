@@ -1,8 +1,0 @@
-@import "../root.css";
-
-.jfx-drawer-overlay-pane {
-    -fx-background-color: -fx-colorNone ;
-}
-.jfx-drawer-side-pane {
-    -fx-background-color: -fx-colorSix !important;
-}

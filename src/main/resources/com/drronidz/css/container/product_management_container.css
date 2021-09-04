@@ -1,0 +1,25 @@
+@import "../root.css";
+
+/*loading fonts*/
+
+.jfx-tab-pane:top .depth-container .tab-header-area .headers-region .tab-selected-line {
+    /* Hide default line of selected tab*/
+    -fx-background-color: transparent;
+}
+
+.tab-label .text {
+    -fx-font-family: 'Titillium Web SemiBold';
+    -fx-font-size: 15;
+}
+.label {
+    -fx-font-family: 'Titillium Web Bold';
+    -fx-font-size: 10;
+}
+
+/* Add border at the bottom of the selected tab*/
+  .jfx-tab-pane .tab:selected
+  {
+      -fx-border-width : 0 0 3 0;
+  /* IInsert the color of the selected tab's line you wish to have*/
+  -fx-border-color:  #d0d0d0;
+  }

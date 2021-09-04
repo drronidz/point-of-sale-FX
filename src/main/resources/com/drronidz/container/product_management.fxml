@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="container" gridLinesVisible="true" prefHeight="689.0" prefWidth="1092.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drronidz.controller.container.ProductManagementController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="659.2000015258789" minHeight="10.0" prefHeight="645.9999984741211" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="647.0" prefWidth="886.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
+         <children>
+            <JFXTabPane fx:id="tabPane" prefHeight="658.0" prefWidth="886.0">
+               <tabs>
+                  <Tab fx:id="categories" text="CATEGORIES">
+                     <content>
+                        <fx:include fx:id="categoryDrawer" source="../drawer/category_management_drawer.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab text="PRODUCTS">
+                     <content>
+                        <StackPane prefHeight="612.0" prefWidth="1160.0">
+                           <children>
+                              <JFXDrawer fx:id="categoriesDrawer" defaultDrawerSize="400.0" direction="RIGHT" style="-fx-background-color: yellow;" />
+                              <JFXButton fx:id="openOrClose" text="OPEN / CLOSE" />
+                           </children>
+                        </StackPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </VBox>
+      <fx:include fx:id="header" prefHeight="38.0" prefWidth="750.0" source="../component/header.fxml" />
+   </children>
+   <stylesheets>
+      <URL value="@../css/container/product_management_container.css" />
+      <URL value="@../css/root.css" />
+   </stylesheets>
+</GridPane>

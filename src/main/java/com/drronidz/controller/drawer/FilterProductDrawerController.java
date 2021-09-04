@@ -7,156 +7,65 @@ DATE : 6/17/2021 4:49 PM
 */
 
 
-import com.drronidz.controller.listcell.FilterProductCellController;
+import com.drronidz.Main;
+import com.drronidz.controller.card.CartController;
+import com.drronidz.controller.drawer.side.filter.FilterProduct;
 import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXTextField;
-import javafx.animation.TranslateTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.jfoenix.controls.JFXDrawer;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.util.Duration;
+import javafx.scene.Node;
+
+import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
-public class FilterProductDrawerController implements Initializable {
+public class FilterProductDrawerController extends AbstractDrawer implements Initializable {
+
+    final private static String FILTER_PRODUCT_SIDE = "filter_product";
 
     @FXML
-    public HBox drawer;
+    public JFXDrawer drawer;
 
-    @FXML
-    public VBox overlay;
-
-    @FXML
-    public JFXListView<Product> productListView;
-
-    @FXML
-    private JFXTextField searchByDetails;
-
-    @FXML
-    public JFXButton clearSelection;
-
-    @FXML
-    private JFXButton addAllToCart;
-
-    public ObservableList<Product> products = FXCollections.observableArrayList();
+    FilterProduct controller;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        Product productOne = new Product(
-                "1",
-                "661244889988",
-                "AllStars",
-                "Converse",
-                "Red",
-                "43",
-                70.00,
-                10,
-                100,
-                7,
-                true,
-                false,
-                "peace",
-                0,
-                30,
-                "image",
-                LocalDateTime.now()
-        );
-
-        Product productTwo = new Product(
-                "1",
-                "661244889988",
-                "BlackStart",
-                "Converse",
-                "Blue",
-                "43",
-                80.00,
-                10,
-                135,
-                7,
-                true,
-                false,
-                "peace",
-                0,
-                40,
-                "image",
-                LocalDateTime.now()
-        );
-
-        Product productThree = new Product(
-                "1",
-                "661244889988",
-                "SkyStar",
-                "Converse",
-                "White",
-                "43",
-                90.00,
-                10,
-                85,
-                7,
-                true,
-                false,
-                "peace",
-                0,
-                50,
-                "image",
-                LocalDateTime.now()
-        );
-        products.clear();
-
-        products.addAll(productOne,productTwo,productThree);
-        productListView.setCellFactory(filterProductCell -> new FilterProductCellController());
-        productListView.setItems(products);
-        handleAddAll();
-        handleClearSelection();
-
+        setNode(FILTER_PRODUCT_SIDE, drawer);
+        closeSidePane(drawer);
     }
 
-    public void handleClearSelection() {
-        clearSelection.setOnMouseClicked(mouseEvent -> {
-            System.out.println("clear selection (uncheck JFXCheckbox)");
-            for (Product product: products) {
-                product.setSelected(false);
-            }
-        });
+    public void addItemToCart(CartController cartController) {
+        // Handle add to Cart from Filter Product Drawer !
+        for (Product product: controller.productListView.getItems()) {
+            product.isSelectedFX().addListener(((observableValue, oldValue, newValue) -> {
+                if(!newValue) {
+                    cartController.cartListView.getItems().remove(product);
+                } else {
+                    product.setDemandQuantity(1);
+                    cartController.cartListView.getItems().add(product);
+                }
+            }));
+        }
     }
 
-    public void handleAddAll() {
-        addAllToCart.setOnMouseClicked(mouseEvent -> {
-            for (Product product: products) {
-                product.setSelected(true);
-            }
-        });
+    @Override
+    public void setNode(String viewName, JFXDrawer drawer) {
+        try {
+            FXMLLoader loader = Main.loadFXMLoader(PATH_FILTER, FILTER_PRODUCT_SIDE);
+            Node node = loader.load();
+            drawer.setSidePane(node);
+            controller = loader.getController();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void openOrCloseDrawer() {
-
-        TranslateTransition openNav = new TranslateTransition(new Duration(350), drawer);
-
-        openNav.setToX(0);
-
-        TranslateTransition closeNav = new TranslateTransition(new Duration(350), drawer);
-
-            if (drawer.getTranslateX() != 0) {
-                openNav.play();
-                drawer.toFront();
-            } else {
-                closeNav.setToX(-(drawer.getWidth()));
-                closeNav.play();
-            }
-
-        overlay.setOnMouseClicked(mouseEvent -> {
-            closeNav.setToX(-(drawer.getWidth()));
-            closeNav.play();
-        });
+    @Override
+    public void openSidePane(JFXButton open) {
+        drawer.setOnDrawerOpening((event) -> drawer.setViewOrder(0));
+        open.setOnMouseClicked(mouseEvent -> drawer.open());
     }
-
-
-
 }

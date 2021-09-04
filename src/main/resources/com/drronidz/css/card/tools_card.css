@@ -1,0 +1,56 @@
+@import "../root.css";
+@import "../button.css";
+
+/*tools label */
+.ticket {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 20;
+}
+
+/*tools buttons */
+.button-reset {
+    -fx-background-color:-fx-colorFour ;
+    -fx-text-fill: -fx-colorSeven;
+}
+.button-reset:hover {
+    -fx-background-color: -fx-colorThree;
+    -fx-text-fill: -fx-colorFour;
+}
+.button-validate {
+    -fx-background-color:-fx-colorTwo ;
+    -fx-font-family: 'Titillium Web Bold';
+    -fx-text-fill: -fx-colorThree;
+    -fx-font-size: 20;
+}
+.button-validate:hover {
+    -fx-font-family: 'Titillium Web Bold';
+    -fx-font-size: 20;
+    -fx-background-color: -fx-colorThree;
+    -fx-text-fill: -fx-colorTwo;
+}
+
+/*tools icons*/
+.button .ikonli-font-icon {
+    -fx-icon-color:-fx-colorTwo !important;
+}
+
+.button:hover .ikonli-font-icon {
+    -fx-icon-color:-fx-colorThree !important;
+}
+.button:disabled .ikonli-font-icon {
+    -fx-icon-color:-fx-colorOne !important;
+}
+/*validate button */
+.button-validate .ikonli-font-icon {
+    -fx-icon-color: -fx-colorThree !important;
+}
+.button-validate:hover .ikonli-font-icon {
+    -fx-icon-color:-fx-colorTwo !important;
+}
+/* reset button */
+.button-reset .ikonli-font-icon {
+    -fx-icon-color:-fx-colorSeven !important;
+}
+.button-reset:hover .ikonli-font-icon {
+    -fx-icon-color:-fx-colorFour !important;
+}

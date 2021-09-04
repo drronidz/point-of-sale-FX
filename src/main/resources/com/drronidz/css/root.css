@@ -7,15 +7,21 @@
     -fx-colorSix:#c3cdd6;
     -fx-colorSeven: white;
 }
-@font-face {
-    src: url('font/LemonMilk.otf');
-    font-family: 'Lemon/Milk';
-}
+
+/*loading fonts*/
 @font-face {
     src: url('font/LemonMilklight.otf');
-    font-family: 'Lemon/Milk light';
+    font-family: "Lemon/Milk light";
 }
 @font-face {
     src: url('font/TitilliumWeb-Regular.ttf');
-    font-family:'Titillium Web Regular';
+    font-family:"Titillium Web Regular";
+}
+@font-face {
+    src: url('font/TitilliumWeb-SemiBold.ttf');
+    font-family:"Titillium Web SemiBold";
+}
+@font-face {
+    src: url('font/TitilliumWeb-Bold.ttf');
+    font-family: 'TitilliumWeb Bold';
 }

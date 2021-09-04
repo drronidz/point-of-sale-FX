@@ -1,0 +1,20 @@
+@import "root.css";
+
+.container {
+    -fx-background-color: -fx-colorFive;
+}
+
+.button-back {
+    -fx-background-color: -fx-colorThree;
+    -fx-text-fill:-fx-colorSeven ;
+    -fx-font-family: 'Titillium Web SemiBold';
+    -fx-font-size: 10;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+}
+
+.header-title {
+    -fx-font-size: 14;
+    -fx-font-family: 'Titillium Web SemiBold';
+    -fx-text-fill:-fx-colorSeven ;
+}

@@ -1,59 +1,25 @@
 @import "root.css";
+
 /*loading fonts*/
 @font-face {
     src: url('font/LemonMilklight.otf');
-    font-family: 'Lemon/Milk light';
+    font-family: "Lemon/Milk light";
 }
 @font-face {
     src: url('font/TitilliumWeb-Regular.ttf');
-    font-family:'Titillium Web Regular';
+    font-family:"Titillium Web Regular";
 }
 @font-face {
     src: url('font/TitilliumWeb-SemiBold.ttf');
-    font-family:'Titillium Web SemiBold';
+    font-family:"Titillium Web SemiBold";
 }
 @font-face {
     src: url('font/TitilliumWeb-Bold.ttf');
     font-family: 'Titillium Web Bold';
 }
-/*tools view */
-.ticket {
-    -fx-font-family: "Titillium Web Regular";
-    -fx-font-size: 20;
-}
 
-/*cart view*/
-.label {
-    -fx-font-family: "Titillium Web SemiBold";
-    -fx-font-size: 20;
-}
-.total-label {
-    -fx-font-family: "Titillium Web Bold";
-    -fx-font-size: 34;
-}
-.discount-label {
-    -fx-font-family: "Titillium Web SemiBold";
-    -fx-text-fill: -fx-colorFour;
-    -fx-font-size: 20;
-}
-/*cart-item*/
-.cart-item-label{
-    -fx-font-family: "Titillium Web SemiBold";
-    -fx-font-size: 14;
-}
-.demand-total-label {
-    -fx-font-family: "Titillium Web Bold";
-    -fx-font-size: 15;
-}
-/*product listview*/
-.taxe-label{
-    -fx-font-family: "Titillium Web SemiBold";
-    -fx-font-size: 14;
-}
-.taxe-value-label{
-    -fx-font-family: "Titillium Web Bold";
-    -fx-font-size: 14;
-}
+
+
 
 /*confirmation dialog*/
 .confirmation-header-label {
@@ -81,3 +47,7 @@
     -fx-text-fill: white;
     -fx-background-radius: 5;
 }
+
+
+
+

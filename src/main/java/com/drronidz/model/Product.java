@@ -10,29 +10,24 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
-import java.time.DateTimeException;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-public class Product {
+public class Product extends Entity{
 
     private String code;
     private String barCode;
-    private String name;
     private String category;
     private String color;
     private String size;
     private double cost;
-    private double discount;
-    private SimpleDoubleProperty discountProduct;
+    private int discount;
+    private SimpleIntegerProperty discountProduct;
     private double salePrice;
     private SimpleDoubleProperty salePriceProduct;
     private double saleBeforeTaxe;
     private double taxes;
-    private boolean isActive;
-    private SimpleBooleanProperty activeProduct;
-    private boolean selected;
-    private SimpleBooleanProperty selectProduct;
+
+
     private String unitOfMeasure;
     private int demandQuantity;
     private SimpleIntegerProperty demandQuantityProduct;
@@ -49,7 +44,7 @@ public class Product {
                    String color,
                    String size,
                    double cost,
-                   double discount,
+                   int discount,
                    double saleBeforeTaxe,
                    double taxes,
                    boolean isActive,
@@ -71,7 +66,7 @@ public class Product {
         this.taxes = taxes;
         this.salePrice = saleBeforeTaxe + ((saleBeforeTaxe * taxes)/100);
         this.isActive = isActive;
-        this.selected = selected;
+        this.isSelected = selected;
         this.unitOfMeasure = unitOfMeasure;
         this.demandQuantity = demandQuantity;
         this.availableQuantity = availableQuantity;
@@ -80,11 +75,11 @@ public class Product {
         this.updatedAt = updatedAt;
 
         // Simple Object Properties
-        this.selectProduct = new SimpleBooleanProperty(selected);
-        this.activeProduct = new SimpleBooleanProperty(isActive);
+        this.selectFX = new SimpleBooleanProperty(selected);
+        this.activeFX = new SimpleBooleanProperty(isActive);
         this.demandQuantityProduct = new SimpleIntegerProperty(demandQuantity);
         this.salePriceProduct = new SimpleDoubleProperty(salePrice);
-        this.discountProduct = new SimpleDoubleProperty(discount);
+        this.discountProduct = new SimpleIntegerProperty(discount);
         this.availableQuantityProdcut = new SimpleIntegerProperty(availableQuantity);
 
     }
@@ -145,11 +140,11 @@ public class Product {
         this.cost = cost;
     }
 
-    public double getDiscount() {
+    public int getDiscount() {
         return discountProduct.get();
     }
 
-    public void setDiscount(double discount) {
+    public void setDiscount(int discount) {
         this.discountProduct.set(discount);
         this.discount = discount;
     }
@@ -179,23 +174,9 @@ public class Product {
         this.taxes = taxe;
     }
 
-    public boolean isActive() {
-        return isActive;
-    }
 
-    public void setActive(boolean active) {
-        this.isActive = active;
-        this.activeProduct.set(active);
-    }
 
-    public boolean isSelected() {
-        return this.selectProduct.get();
-    }
 
-    public void setSelected(boolean selected) {
-        this.selected = selected;
-        this.selectProduct.set(selected);
-    }
 
     public String getUnitOfMeasure() {
         return unitOfMeasure;
@@ -249,19 +230,14 @@ public class Product {
 
     // Simple Object Properties
 
-    public SimpleBooleanProperty isSelectedProductProperty() {
-        return selectProduct;
-    }
 
-    public SimpleBooleanProperty isActiveProductProperty() {
-        return activeProduct;
-    }
+
 
     public SimpleIntegerProperty demandQuantityProductProperty() {
         return demandQuantityProduct;
     }
 
-    public SimpleDoubleProperty  discountProductProperty() { return discountProduct; }
+    public SimpleIntegerProperty  discountProductProperty() { return discountProduct; }
 
     public SimpleIntegerProperty availableQuantityProductProperty() {
         return availableQuantityProdcut;

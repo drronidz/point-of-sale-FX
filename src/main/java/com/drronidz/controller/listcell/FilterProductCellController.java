@@ -6,10 +6,8 @@ USER NAME : @ DRRONIDZ
 DATE : 6/20/2021 12:20 AM
 */
 
-import com.drronidz.Main;
 import com.drronidz.model.Product;
 import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXListCell;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,6 +40,8 @@ public class FilterProductCellController extends AbstractListCellController<Prod
 
     @FXML private JFXCheckBox isChecked;
 
+    FXMLLoader fxmlLoader;
+
     @Override
     protected void updateItem(Product item, boolean empty) {
         super.updateItem(item, empty);
@@ -67,7 +67,7 @@ public class FilterProductCellController extends AbstractListCellController<Prod
 
                 availableQuantity.setText(String.valueOf(item.getAvailableQuantity()));
 
-                bindCheckBox(isChecked, item.isSelectedProductProperty());
+                bindCheckBox(isChecked, item.isSelectedFX());
 
                 bindLabel(availableQuantity, item.availableQuantityProductProperty());
 

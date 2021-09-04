@@ -2,8 +2,10 @@ package com.drronidz;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -60,6 +62,12 @@ public class Main extends Application {
 
     public static FXMLLoader loadFXMLoader(String pathType, String fxml) throws IOException {
         return new FXMLLoader(Main.class.getResource("/com/drronidz/"+ pathType +"/"+ fxml + ".fxml"));
+    }
+
+    public static Node getNode(String pathType, String fxml) throws IOException {
+        FXMLLoader loader =
+                new FXMLLoader(Main.class.getResource("/com/drronidz/" + pathType + "/" + fxml + ".fxml"));
+        return loader.load();
     }
 
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="611.0" prefWidth="600.0" style="-fx-background-color: yellow;" stylesheets="@../css/card/cart_card.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.drronidz.controller.card.CartController">
+   <columnConstraints>
+      <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="595.0" minWidth="595.0" prefWidth="595.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="60.79999771118163" minHeight="50.0" prefHeight="60.79999771118163" valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="435.200048828125" minHeight="5.5999977111816435" prefHeight="425.60000228881836" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="219.2" minHeight="0.0" prefHeight="85.19997558593747" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <JFXButton fx:id="enterOrScan" contentDisplay="CENTER" graphicTextGap="5.0" lineSpacing="2.0" maxHeight="46.0" maxWidth="575.0" minHeight="40.0" minWidth="575.0" prefHeight="46.0" prefWidth="575.0" styleClass="button-enterOrScan" text="ENTER OR SCAN PRODUCT" />
+      <JFXListView fx:id="cartListView" maxWidth="590.0" minWidth="590.0" prefHeight="425.0" prefWidth="590.0" stylesheets="@../css/listcell/cart_cell.css" GridPane.rowIndex="1" />
+      <GridPane gridLinesVisible="true" hgap="5.0" maxHeight="-Infinity" prefHeight="70.0" prefWidth="595.0" vgap="5.0" GridPane.rowIndex="2">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.20001220703125" minWidth="160.0" prefWidth="166.4000244140625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="263.99997558593753" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="CENTER" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Label alignment="TOP_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="120.0" text="Subtotal">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="subTotal" alignment="TOP_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="160.0" text="110.52 £" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="TOP_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="120.0" text="VAT 21%" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="tvaTaxe" alignment="TOP_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="160.0" text="29.38 £" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="120.0" styleClass="discount-label" text="Discount" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="discount" alignment="TOP_LEFT" contentDisplay="CENTER" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="160.0" styleClass="discount-label" text="00.00 £" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Label alignment="BOTTOM_RIGHT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="270.0" text="TOTAL" GridPane.columnIndex="2">
+               <padding>
+                  <Insets right="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="total" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="270.0" styleClass="total-label" text="139.90 £" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+               <padding>
+                  <Insets right="2.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

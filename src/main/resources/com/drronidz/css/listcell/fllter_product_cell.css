@@ -97,3 +97,22 @@
     -fx-background-color: transparent;
 }
 /*********************************** End Cart ListView  Scroll barre ****************************************/
+/*filter cell label*/
+.cart-item-label{
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 14;
+}
+.demand-total-label {
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 15;
+}
+
+/*product listview*/
+.taxe-label{
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 14;
+}
+.taxe-value-label{
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 14;
+}

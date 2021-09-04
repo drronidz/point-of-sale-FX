@@ -1,0 +1,85 @@
+@import "../root.css";
+
+@font-face {
+    src: url('../font/TitilliumWeb-Regular.ttf');
+    font-family:"Titillium Web Regular";
+}
+@font-face {
+    src: url('../font/TitilliumWeb-SemiBold.ttf');
+    font-family:"Titillium Web SemiBold";
+}
+@font-face {
+    src: url('../font/TitilliumWeb-Bold.ttf');
+    font-family: 'Titillium Web Bold';
+}
+
+.back-button {
+    -fx-background-color:-fx-colorFive ;
+    -fx-text-fill: -fx-colorSeven;
+    -fx-font-size: 12;
+    -fx-font-family: "Titillium Web Bold";
+}
+.new-category {
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 18;
+}
+
+.text-field{
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 14;
+    -fx-padding: 3;
+    -fx-prompt-text-fill: #434343;
+    -fx-text-fill: #434343;
+    -fx-background-color: -fx-colorOne;
+}
+
+.text-area {
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 14;
+    -fx-padding: 3;
+    -fx-prompt-text-fill: #434343;
+    -fx-text-fill: #434343;
+    -fx-background-color: -fx-colorOne;
+}
+
+.input-line{
+    -fx-background-color: transparent;
+}
+.input-focused-line{
+    -fx-background-color: transparent;
+}
+.error-label {
+    -fx-font-family: "Titillium Web Bold";
+    -fx-text-fill: #f04b3b;
+    -fx-font-size: 13;
+    -fx-wrap-text: true;
+}
+
+.category-icon-label {
+    -fx-font-size: 15;
+    -fx-font-family: "Titillium Web Bold";
+}
+.category-icon-container {
+    -fx-border-color:-fx-colorTwo ;
+    -fx-border-width: 3px;
+}
+
+.browse-button {
+    -fx-font-size: 14;
+    -fx-font-family: "Titillium Web SemiBold";
+}
+
+.clear-button {
+    -fx-font-size: 14;
+    -fx-font-family: "Titillium Web SemiBold";
+}
+
+.save-button {
+    -fx-font-size: 14;
+    -fx-font-family: "Titillium Web SemiBold";
+}
+
+.cancel-button {
+    -fx-font-size: 14;
+    -fx-font-family: "Titillium Web SemiBold";
+}

@@ -1,0 +1,59 @@
+@import "../root.css";
+
+/*Product Card label*/
+
+.no-content-label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 20;
+    -fx-text-fill: -fx-colorFive;
+    -fx-background-radius: 5;
+}
+.image-container {
+    -fx-border-color: -fx-colorTwo;
+    -fx-border-width: 2px;
+}
+
+.demand-quantity-label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 18;
+    -fx-text-fill: -fx-colorFive;
+    -fx-background-radius: 5;
+}
+.code-label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 15;
+    -fx-text-fill: -fx-colorFive;
+}
+.ref-label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 15;
+    -fx-text-fill: -fx-colorFive;
+}
+
+.product-name-label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 15;
+    -fx-text-fill: -fx-colorTwo;
+}
+.percentage-label {
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 15;
+    -fx-text-fill: -fx-colorFour;
+}
+
+.starting-price-label .text{
+    -fx-strikethrough: true;
+    -fx-font-family: "Titillium Web SemiBold";
+    -fx-font-size: 18;
+}
+
+.ending-price-label {
+    -fx-font-family: "Titillium Web Bold";
+    -fx-font-size: 20;
+}
+
+/* Product Card Icon*/
+
+.tag-icon .ikonli-font-icon{
+    -fx-icon-color: -fx-colorFour !important;
+}

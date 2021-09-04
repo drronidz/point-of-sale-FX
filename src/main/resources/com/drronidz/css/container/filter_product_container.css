@@ -1,0 +1,11 @@
+@import "../root.css";
+@import "../button.css";
+
+.filter-text-field{
+    -fx-font-family: "Lemon/Milk";
+    -fx-font-size: 14;
+    -fx-prompt-text-fill: #38d52e;
+    -fx-text-fill: #F3F3F3;
+    -fx-background-color: transparent;
+
+}

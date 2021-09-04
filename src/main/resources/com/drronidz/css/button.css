@@ -5,6 +5,10 @@
     src: url('font/TitilliumWeb-Regular.ttf');
 }
 @font-face {
+    font-family:'Titillium Web Bold';
+    src: url('font/TitilliumWeb-Bold.ttf');
+}
+@font-face {
     src: url('font/LemonMilk.otf');
     font-family: 'Lemon/Milk';
 }
@@ -29,50 +33,9 @@
     -fx-background-color: #1c252c;
 }
 
-/*tools buttons */
-.button-reset {
-    -fx-background-color:-fx-colorFour ;
-    -fx-text-fill: -fx-colorSeven;
-}
-.button-reset:hover {
-    -fx-background-color: -fx-colorThree;
-    -fx-text-fill: -fx-colorFour;
-}
-.button-validate {
-    -fx-background-color:-fx-colorTwo ;
-    -fx-font-family: 'Lemon/Milk';
-    -fx-text-fill: -fx-colorThree;
-    -fx-font-size: 18;
-}
-.button-validate:hover {
-    -fx-font-family: 'Lemon/Milk';
-    -fx-font-size: 18;
-    -fx-background-color: -fx-colorThree;
-    -fx-text-fill: -fx-colorTwo;
-}
 
-/*cart buttons */
-.button-enterOrScan {
-    -fx-background-color:#b4b4b2;
-    -fx-font-family: 'Titillium Web Regular';
-    -fx-font-size: 18;
-}
-.button-enterOrScan:hover {
-    -fx-text-transform: uppercase;
-    -fx-font-family: 'Titillium Web Regular';
-    -fx-font-size: 18;
-    -fx-background-color: -fx-colorFive;
-    -fx-text-fill: -fx-colorTwo;
-}
 
-.button-increment-cart {
-    -fx-background-radius: 50;
-    -fx-border-radius: 50;
-}
-.button-decrement-cart {
-    -fx-background-radius: 50;
-    -fx-border-radius: 50;
-}
+
 
 /*Filter product Drawer*/
 
@@ -138,17 +101,4 @@
     -fx-fill: -fx-colorThree;
 }
 
-/*Calculator**/
 
-.button-calculator{
-    -fx-background-color:-fx-colorThree;
-    -fx-font-family: 'Titillium Web Bold';
-    -fx-text-fill:-fx-colorTwo ;
-    -fx-font-size: 18;
-    -fx-background-radius: 30;
-}
-
-.button-calculator:hover {
-    -fx-background-color: -fx-colorTwo;
-    -fx-text-fill:-fx-colorThree ;
-}

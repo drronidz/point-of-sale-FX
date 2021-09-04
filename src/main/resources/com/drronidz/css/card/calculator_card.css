@@ -1,0 +1,27 @@
+@import "../root.css";
+@import "../button.css";
+
+
+/*calculator button**/
+
+.button-calculator{
+    -fx-background-color:-fx-colorThree;
+    -fx-font-family: 'Titillium Web SemiBold';
+    -fx-text-fill:-fx-colorTwo ;
+    -fx-font-size: 18;
+    -fx-background-radius: 30;
+}
+
+.button-calculator:hover {
+    -fx-background-color: -fx-colorTwo;
+    -fx-text-fill:-fx-colorThree ;
+}
+
+
+/* Calculator icons */
+.button-calculator .ikonli-font-icon{
+    -fx-icon-color: -fx-colorTwo !important;
+}
+.button-calculator:hover .ikonli-font-icon{
+    -fx-icon-color: -fx-colorThree !important;
+}

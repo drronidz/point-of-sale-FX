@@ -1,0 +1,21 @@
+@import "../root.css";
+
+.title-label {
+    -fx-font-family: 'Titillium Web Bold';
+    -fx-font-size: 20;
+}
+
+.info-label-left {
+    -fx-font-family: 'Titillium Web Regular';
+    -fx-font-size: 18;
+}
+
+.info-label-right {
+    -fx-font-family: 'Titillium Web SemiBold';
+    -fx-font-size: 18;
+}
+
+.icon-container {
+    -fx-border-width: 2;
+    -fx-border-color:-fx-colorTwo ;
+}
